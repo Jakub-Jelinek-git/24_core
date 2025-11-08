@@ -6,7 +6,7 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 06:14:57 by Jakub             #+#    #+#             */
-/*   Updated: 2025/11/08 06:48:24 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/08 06:53:25 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void ft_print_alphabet(void)
     }
 }
 
-int main()
+/*int main()
 {
     ft_print_alphabet();
     return 0;
-}
+}*/
