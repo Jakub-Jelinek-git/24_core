@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 06:14:57 by Jakub             #+#    #+#             */
-/*   Updated: 2025/11/08 07:08:22 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/08 06:53:02 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/08 07:09:43 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include <unistd.h>
 
-void ft_putchar(char c)
+void    ft_putchar(char c)
 {
     write(1, &c, 1);
 }
 
-void ft_print_alphabet(void)
+void ft_print_numbers(void)
 {
     char c;
-    c = 'a';
- 
-    while(c >= 'a' && c <= 'z')
+    c = '0';
+
+    while(c >= '0' && c <= '9')
     {
-		ft_putchar(c);
-		c++;
+        ft_putchar(c);
+        c++;
     }
 }
 
-/*int main()
+int main()
 {
-    ft_print_alphabet();
+    ft_print_numbers();
     return 0;
-}*/
+}

@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 06:14:57 by Jakub             #+#    #+#             */
-/*   Updated: 2025/11/08 07:08:22 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/08 12:17:54 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/08 12:28:08 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-void ft_putchar(char c)
+void ft_swap(int *a, int *b)
 {
-    write(1, &c, 1);
+	int temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
-void ft_print_alphabet(void)
+/*int main(void)
 {
-    char c;
-    c = 'a';
- 
-    while(c >= 'a' && c <= 'z')
-    {
-		ft_putchar(c);
-		c++;
-    }
-}
+	int a;
+	int b;
 
-/*int main()
-{
-    ft_print_alphabet();
-    return 0;
+	a = 42;
+	b = 24;
+	printf("%i, ", a);
+	printf("%i\n\n", b);
+	ft_swap(&a, &b);
+	printf("%i, ", a);
+	printf("%i", b);
+	return 0;
 }*/
