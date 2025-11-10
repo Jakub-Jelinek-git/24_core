@@ -6,25 +6,25 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:34:18 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/08 14:45:55 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/08 16:47:35 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_iterative_factorial(int nb)
+int	ft_iterative_factorial(int nb)
 {
-	int result;
+	int	result;
+
 	result = 1;
-	
 	if (nb < 0)
-		return 0;
+		return (0);
 	while (nb >= 2)
 	{
 		result *= nb;
 		nb--;
 	}
-	return(result);
+	return (result);
 }
 
 /*int main(void)

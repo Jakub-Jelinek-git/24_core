@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 12:17:54 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/08 16:54:06 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/10 18:09:34 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/10 18:18:53 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-void	ft_swap(int *a, int *b)
+void	ft_putchar(char c)
 {
-	int	temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	write(1, &c, 1);
 }
 
-/*int main(void)
+void	ft_putstr(char *str)
 {
-	int a;
-	int b;
+	while (*str)
+		ft_putchar(*str++);
+}
 
-	a = 42;
-	b = 24;
-	printf("%i, ", a);
-	printf("%i\n\n", b);
-	ft_swap(&a, &b);
-	printf("%i, ", a);
-	printf("%i", b);
-	return 0;
-}*/
+void	ft_print_params(int argc, char **argv)
+{
+	int	i;
+
+	i = 1;
+	while (argc > i)
+	{
+		ft_putstr(argv[i]);
+		write(1, "\n", 1);
+		i++;
+	}
+}
+
+int main(int argc, char **argv)
+{
+	ft_print_params(argc, argv);
+	return (0);
+}

@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 12:17:54 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/08 16:54:06 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/10 17:57:12 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/10 18:08:28 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-void	ft_swap(int *a, int *b)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	while(*s1 == *s2 && *s1)
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
-
-/*int main(void)
-{
-	int a;
-	int b;
-
-	a = 42;
-	b = 24;
-	printf("%i, ", a);
-	printf("%i\n\n", b);
-	ft_swap(&a, &b);
-	printf("%i, ", a);
-	printf("%i", b);
-	return 0;
-}*/

@@ -6,11 +6,11 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:31:34 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/08 14:33:18 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/08 16:54:01 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
 	*div = a / b;
 	*mod = a % b;

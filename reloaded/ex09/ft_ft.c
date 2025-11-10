@@ -6,11 +6,11 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 07:16:15 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/08 12:17:09 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/08 16:49:24 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_ft(int *nbr)
+void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
