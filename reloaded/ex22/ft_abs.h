@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 18:09:34 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/11 19:43:19 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/11 18:17:29 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/11 18:19:46 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-void	ft_putstr(char *str)
-{
-	while (*str)
-		ft_putchar(*str++);
-}
+# define ABS(Value) ((((Value) > 0) * (Value)) + (((Value) < 0) * -(Value)))
 
-void	ft_print_params(int argc, char **argv)
-{
-	int	i;
-
-	i = 1;
-	while (argc > i)
-	{
-		ft_putstr(argv[i]);
-		ft_putchar('\n');
-		i++;
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	ft_print_params(argc, argv);
-	return (0);
-}
+#endif

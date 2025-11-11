@@ -6,13 +6,13 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 17:57:12 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/10 18:08:28 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:44:48 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	while(*s1 == *s2 && *s1)
+	while (*s1 == *s2 && *s1)
 	{
 		s1++;
 		s2++;

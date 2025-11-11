@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 14:46:32 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/11 20:22:58 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/08 14:34:18 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/11 20:23:40 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_recursive_factorial(int nb)
+int	ft_iterative_factorial(int nb)
 {
+	int	result;
+
+	result = 1;
 	if (nb < 0 || nb > 12)
 		return (0);
-	if (nb == 0 || nb == 1)
-		return (1);
-	return (nb *= ft_recursive_factorial(nb - 1));
+	while (nb >= 2)
+	{
+		result *= nb;
+		nb--;
+	}
+	return (result);
 }
 
 /*int main(void)
 {
-	printf("%i, ", ft_recursive_factorial(0));
-	printf("%i, ", ft_recursive_factorial(1));
-	printf("%i, ", ft_recursive_factorial(-3));
-	printf("%i, ", ft_recursive_factorial(7));
-	printf("%i", ft_recursive_factorial(10));
+	printf("%i, ", ft_iterative_factorial(0));
+	printf("%i, ", ft_iterative_factorial(1));
+	printf("%i, ", ft_iterative_factorial(-3));
+	printf("%i, ", ft_iterative_factorial(5));
+	printf("%i", ft_iterative_factorial(10));
 	return(0);
 }*/

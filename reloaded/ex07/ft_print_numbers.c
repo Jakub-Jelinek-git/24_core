@@ -6,16 +6,13 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 06:53:02 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/08 16:53:14 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:13:51 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void	ft_print_numbers(void)
 {
