@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 08:37:29 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/13 20:47:05 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/13 18:38:00 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/13 20:47:49 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-int		ft_isdigit(int c);
-int		ft_isalpha(int c);
-void	*ft_memset(void *b, int c, size_t len);
-
-# include <stddef.h> 
-
-#endif
+void	bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
