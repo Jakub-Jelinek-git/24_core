@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 08:37:29 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/13 18:21:05 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/13 18:16:31 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/13 18:25:36 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-int	ft_isdigit(int c);
-int	ft_isalpha(int c);
-# include <stddef.h> 
+size_t	ft_strlen(const char *s)
+{
+	size_t	size;
 
-#endif
+	size = 0;
+	while (s[size])
+		size++;
+	return (size);
+}
