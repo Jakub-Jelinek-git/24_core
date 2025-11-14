@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 21:41:24 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/14 16:27:04 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/14 11:38:01 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/14 16:26:20 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t				i;
 	const unsigned char	*s;
 	unsigned char		*d;
 
-	i = 0;
 	s = (const unsigned char*)src;
 	d = (unsigned char*)dst;
-	while (i < n)
+	if (!dst && !src)
+		return (NULL);
+	if (d < s)
 	{
-		d[i] = s[i];
-		i++;
+		i = 0;
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (len-- > 0)
+		{
+			d[len] = s[len];
+		}
 	}
 	return (dst);
 }

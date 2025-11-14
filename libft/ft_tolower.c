@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 21:41:24 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/14 16:27:04 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/14 12:45:05 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/14 12:46:38 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+int	tolower(int c)
 {
-	size_t				i;
-	const unsigned char	*s;
-	unsigned char		*d;
-
-	i = 0;
-	s = (const unsigned char*)src;
-	d = (unsigned char*)dst;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dst);
+	if (c >= 'A' && c <= 'Z')
+		return (c + ('a' - 'A'));
+	return (c);
 }
