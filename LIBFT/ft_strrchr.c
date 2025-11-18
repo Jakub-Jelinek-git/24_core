@@ -6,13 +6,13 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 10:24:31 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/16 11:21:38 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/18 16:04:11 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*last;
 
