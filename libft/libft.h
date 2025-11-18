@@ -6,7 +6,7 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 08:37:29 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/18 20:23:01 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/18 20:35:44 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
