@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 15:18:08 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/18 20:12:42 by jjelinek         ###   ########.fr       */
+/*   Created: 2025/11/18 16:28:51 by jjelinek          #+#    #+#             */
+/*   Updated: 2025/11/18 20:10:19 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*ptr;
-	size_t	total;
+	size_t	sub_len;
+	char	*sub_str;
 
-	if (nmemb == 0 || size == 0)
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
 		return (ft_calloc(1, 1));
-	total = nmemb * size;
-	if (total / size != nmemb)
+	sub_len = 0;
+	while (s[start + sub_len] && sub_len < len)
+		sub_len++;
+	sub_str = malloc(sub_len + 1);
+	if (!sub_str)
 		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	ft_strlcpy(sub_str, s + start, sub_len + 1);
+	return (sub_str);
 }
