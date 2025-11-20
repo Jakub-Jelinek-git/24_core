@@ -6,13 +6,13 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 12:44:10 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/20 12:56:42 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/20 17:36:57 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
 

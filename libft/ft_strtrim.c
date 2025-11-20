@@ -6,7 +6,7 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 18:56:47 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/18 20:15:45 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/20 17:35:13 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (end >= start && is_in(set, s1[end]))
 		end--;
 	len = end - start + 1;
-	return(ft_substr(s1, start, len));
+	return (ft_substr(s1, start, len));
 }

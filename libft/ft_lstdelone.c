@@ -6,16 +6,16 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 14:04:38 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/20 14:19:14 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/20 16:59:07 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (!lst || !del)
-        return ;
+		return ;
 	del(lst->content);
 	free(lst);
 }

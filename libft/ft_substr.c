@@ -6,11 +6,12 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:28:51 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/18 20:10:19 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/20 17:35:27 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	sub_len;

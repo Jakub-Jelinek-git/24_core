@@ -6,7 +6,7 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:16:01 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/19 13:13:35 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/20 17:38:21 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	num_words(char const *s, char c)
 	int	num;
 
 	num = 0;
-	while(*s)
+	while (*s)
 	{
 		while (*s && *s == c)
 			s++;
@@ -67,7 +67,7 @@ static void	*free_all(char **array, int num_w)
 	return (NULL);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	int		num_w;

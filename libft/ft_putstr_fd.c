@@ -6,11 +6,12 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 08:08:58 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/19 10:07:16 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/20 17:37:57 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s)
