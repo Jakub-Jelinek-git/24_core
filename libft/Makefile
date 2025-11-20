@@ -7,7 +7,7 @@ SRCS = $(filter-out ft_lst%.c, $(wildcard ft_*.c))
 BONUS_SRCS = $(wildcard ft_lst*.c)
 
 OBJS = $(SRCS:.c=.o)
-BONUS_OBJS = $(BONUS_OBJS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 HEADER = libft.h
 
