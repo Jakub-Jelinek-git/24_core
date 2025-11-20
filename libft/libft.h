@@ -6,7 +6,7 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 08:37:29 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/19 13:21:29 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/20 13:20:05 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,12 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char **ft_split(char const *s, char c);
 char *ft_itoa(int n);
+t_list *ft_lstnew(void *content);
+
+typedef struct	s_list
+{
+	void *content;
+	struct s_list *next;
+}	t_list;
 
 #endif
