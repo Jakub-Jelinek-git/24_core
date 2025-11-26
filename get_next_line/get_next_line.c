@@ -6,22 +6,24 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 15:11:57 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/26 17:33:13 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/26 20:50:57 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*join_and_free(char *buffer, char *buf)
+static char	*join_and_free(char *buffer, char *buf)
 {
 	char	*new;
 
 	new = ft_strjoin(buffer, buf);
-	free(buffer);
+	if (!new)
+		return NULL;
+	free(buf);
 	return(new);
 }
 
-char	*read_file(int fd, char *buf)
+static char	*read_file(int fd, char *buf)
 {
 	char	*buffer;
 	int		bytes_read;
@@ -33,8 +35,11 @@ char	*read_file(int fd, char *buf)
 	while (bytes_read > 0)
 	{
 		bytes_read = read(fd, buffer, BUFFERSIZE);
+		if (bytes_read == 0)
+			break;
 		if (bytes_read < 0)
 		{
+			free(buf);
 			free(buffer);
 			return (NULL);
 		}
@@ -47,23 +52,55 @@ char	*read_file(int fd, char *buf)
 	return (buf);
 }
 
-char	*get_line(char	*buf, char *line)
+static char	*get_line(char	*buf)
 {
-	int	len;
-	int	i;
+	int		len;
+	int		i;
+	char	*line;
 
 	i = 0;
 	len = 0;
-	while (buf[len] && buf[len] == '\n')
+	if (!buf || !buf[0])
+		return NULL;
+
+	while (buf[len] && buf[len] != '\n')
 		len++;
-	line = ft_calloc(len + 1, sizeof(char));
+	line = ft_calloc(len + 2, sizeof(char));
 	while (i < len)
 	{
 		line[i] = buf[i];
 		i++;
 	}
-	if (buf[i] && buf[i] == '\n');
+	if (buf[i] && buf[i] == '\n')
+		line[i++] = '\n';
+	line[i] = '\0';
 	return (line);
+}
+
+char	*get_rest(char *buf)
+{
+	char	*new_buf;
+	int		i;
+	int		j;
+
+	i = 0;
+	while (buf[i] && buf[i] != '\n')
+		i++;
+	if (!buf[i])
+	{
+		free(buf);
+		return (NULL);
+	}
+	j = 0;
+	i++;
+	while (buf[i + j])
+		j++;
+	new_buf = ft_calloc(j + 1, sizeof(char));
+	j = 0;
+	while (buf[i])
+		new_buf[j++] = buf[i++];
+	free(buf);
+	return (new_buf);
 }
 
 char	*get_next_line(int fd)
@@ -76,10 +113,7 @@ char	*get_next_line(int fd)
 	buf = read_file(fd, buf);
 	if (!buf)
 		return (NULL);
-	buf = read_line();
-	if (!buf)
-		return (NULL);
-	line = get_line(buf, line);
-	buf = get_rest(); ////////
+	line = get_line(buf);
+	buf = get_rest(buf);
 	return (line);
 }
