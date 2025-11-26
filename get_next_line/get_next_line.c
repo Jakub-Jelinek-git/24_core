@@ -6,7 +6,7 @@
 /*   By: jjelinek <jjelinek@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 15:11:57 by jjelinek          #+#    #+#             */
-/*   Updated: 2025/11/26 20:50:57 by jjelinek         ###   ########.fr       */
+/*   Updated: 2025/11/26 20:58:43 by jjelinek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ static char	*join_and_free(char *buffer, char *buf)
 	char	*new;
 
 	new = ft_strjoin(buffer, buf);
-	if (!new)
-		return NULL;
-	free(buf);
+	free(buffer);
 	return(new);
 }
 
@@ -35,11 +33,8 @@ static char	*read_file(int fd, char *buf)
 	while (bytes_read > 0)
 	{
 		bytes_read = read(fd, buffer, BUFFERSIZE);
-		if (bytes_read == 0)
-			break;
 		if (bytes_read < 0)
 		{
-			free(buf);
 			free(buffer);
 			return (NULL);
 		}
@@ -60,9 +55,6 @@ static char	*get_line(char	*buf)
 
 	i = 0;
 	len = 0;
-	if (!buf || !buf[0])
-		return NULL;
-
 	while (buf[len] && buf[len] != '\n')
 		len++;
 	line = ft_calloc(len + 2, sizeof(char));
